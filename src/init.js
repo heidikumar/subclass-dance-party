@@ -65,22 +65,11 @@ $(document).ready(function(){
 
   });
 
-  // $(".lannisterDancer").on("mouseover",function(){
-  //   var styleSettings = {
-  //     height: "250px", 
-  //     width: "250px"
-  //   }
-  //   this.$node.children()[0].css(styleSettings);
-  //   // $(this).children()[0].style["cssText"] = "height:"+4*this.height+"px,width:"+4*this.width;
-  // });
-
-  // $(".stark-dancer").mouseover(function(){
-  //   alert("We did it!");
-  // });
 
 });
 
 //$(document).on('event','selector',callback_function)
+//Event delegation! 
 
 $(document).on('mouseover', '.lannisterDancer', function(){
   $(this).children()[0].style["cssText"] = "height:"+4*this.height+"px,width:"+4*this.width;
