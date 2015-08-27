@@ -3,7 +3,7 @@
 var makeStarkDancer = function(top, left, timeBetweenSteps){
   // debugger;
   Dancer.call(this, top, left, timeBetweenSteps);
-  this.$node = $('<span class="starkDancer"></span>'); 
+  this.$node = $('<span class="starkDancer"><img src="../2015-08-subclass-dance-party/imgs/jonsow.png" style="width:100px;height:125px"</span>'); 
   this.setPosition(this.top, this.left); 
   this.oldStep = this.step; 
   this.stepCount = 0; 

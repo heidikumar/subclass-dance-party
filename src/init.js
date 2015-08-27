@@ -52,16 +52,30 @@ $(document).ready(function(){
     for (var i =0; i<numStark.length; i++){
       //remove the node and get access to the dancer
       //danceMover = $(numStark[i]).detach();
-        //reset top and left using object setPosition
-        top = starkInterval*(i+1) + 10;
+      //reset top and left using object setPosition
+      top = starkInterval*(i+1) + 10;
       //use setAttribute on a specific HTML tag to change elements within
-      numStark[i].style.top = top;
-      numStark[i].style.left = fixedLeftLine;
+      numStark[i].style["cssText"] = "top: "+top+"px; left: "+fixedLeftLine+"px; display: inline;";
     }
-    for (var j = 0; j<numLannister.length; j++){
-
+    for (var j =0; j<numLannister.length; j++){
+      top = lannisterInterval*(j+1) + 10;
+      numLannister[j].style["cssText"] = "top: "+top+"px; left: "+fixedRightLine+"px; display: inline;";
     }
 
   });
+
+/*$(document).on('mousemove', function(e){
+    $('#your_div_id').css({
+       left:  e.pageX,
+       top:   e.pageY
+    });*/
+  // $(document).on("mousemove", function(event){
+  //   $('#dragon').css({
+  //       left: element.pageX;
+  //       top: element.pageY;
+  //   });
+  // });
+  
 });
+
 
