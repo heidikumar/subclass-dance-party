@@ -1,13 +1,13 @@
 //starkDancer.js
 
-var makeStarkDancer = function(top, left, timeBetweenSteps){
+var makeStarkDancer = function(top, left, height, width, timeBetweenSteps){
   // debugger;
-  Dancer.call(this, top, left, timeBetweenSteps);
-  this.$node = $('<span class="starkDancer"><img src="../2015-08-subclass-dance-party/imgs/jonsow.png" style="width:100px;height:125px"</span>'); 
-  this.setPosition(this.top, this.left); 
-  this.oldStep = this.step; 
-  this.stepCount = 0; 
-  this.step(); //invoke oldStep here to get to the makeStarkDancer.step method (and invoke that method). 
+  Dancer.call(this, top, left, height, width, timeBetweenSteps);
+  this.$node = $('<span class="starkDancer" ><img src="../2015-08-subclass-dance-party/imgs/jonsow.png"></span>'); //onmouseover="alert(\'hello\')"
+  this.width = 100;
+  this.setPosition(this.top, this.left);
+  this.setPicture(this.height, this.width); 
+  //this.step(); //invoke oldStep here to get to the makeStarkDancer.step method (and invoke that method). 
 };
 
 makeStarkDancer.prototype = Object.create(Dancer.prototype);
@@ -15,9 +15,5 @@ makeStarkDancer.prototype.constructor = makeStarkDancer;
 
 makeStarkDancer.prototype.step = function(){
   this.$node.toggle();
-  var context = this; //this is to set the context so that "this" is not bound to the window in setTimeout
-  setTimeout(function(){
-    // debugger; 
-    context.oldStep(); }, this.timeBetweenSteps ); 
-
+  Dancer.prototype.step.call(this);
 };

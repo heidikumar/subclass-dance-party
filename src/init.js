@@ -24,9 +24,10 @@ $(document).ready(function(){
     //
     var dancer = new dancerMakerFunction(
       $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
-      Math.random() * 10000 //changed to make blinking less intense.
+      $("body").width() * Math.random(), 125, 125, 3000
+      // Math.random() * 10000 //changed to make blinking less intense.
     );
+
     window.dancers.push(dancer);
     $('body').append(dancer.$node);
   });
@@ -40,7 +41,7 @@ $(document).ready(function(){
     var lannisterInterval = $("body").height()/numLannister.length; 
     var position; 
 
-    var fixedRightLine = Math.floor($("body").width()*0.75); 
+    var fixedRightLine = Math.floor($("body").width()*0.70); 
     var fixedLeftLine = Math.floor($("body").width()*0.25);
 
     var danceMover; 
@@ -64,18 +65,26 @@ $(document).ready(function(){
 
   });
 
-/*$(document).on('mousemove', function(e){
-    $('#your_div_id').css({
-       left:  e.pageX,
-       top:   e.pageY
-    });*/
-  // $(document).on("mousemove", function(event){
-  //   $('#dragon').css({
-  //       left: element.pageX;
-  //       top: element.pageY;
-  //   });
+  // $(".lannisterDancer").on("mouseover",function(){
+  //   var styleSettings = {
+  //     height: "250px", 
+  //     width: "250px"
+  //   }
+  //   this.$node.children()[0].css(styleSettings);
+  //   // $(this).children()[0].style["cssText"] = "height:"+4*this.height+"px,width:"+4*this.width;
   // });
-  
+
+  // $(".stark-dancer").mouseover(function(){
+  //   alert("We did it!");
+  // });
+
 });
+
+//$(document).on('event','selector',callback_function)
+
+$(document).on('mouseover', '.lannisterDancer', function(){
+  $(this).children()[0].style["cssText"] = "height:"+4*this.height+"px,width:"+4*this.width;
+});
+
 
 
