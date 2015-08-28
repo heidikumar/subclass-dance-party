@@ -72,7 +72,14 @@ $(document).ready(function(){
 //Event delegation! 
 
 $(document).on('mouseover', '.lannisterDancer', function(){
-  $(this).children()[0].style["cssText"] = "height:"+4*this.height+"px,width:"+4*this.width;
+  $(this).children()[0].style["height"] = "250px";
+  $(this).children()[0].style["width"] = "250px";
+
+});
+
+$(document).on('mouseout', '.lannisterDancer', function(){
+  $(this).children()[0].style["height"] = "125px";
+  $(this).children()[0].style["width"] = "125px";
 });
 
 
